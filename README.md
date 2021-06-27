@@ -1,6 +1,6 @@
 
 # Registrar subscribers 
-#### Room | Coroutines | Kotlin | MVVM | RecyclerView |
+#### Room |Koin| Coroutines | Kotlin | MVVM | RecyclerView |
 
 **Tecnologias aplicadas**
 
@@ -10,6 +10,7 @@
 * [Padrão MVVM](https://github.com/paulovsborges/RegisterSubscribers/tree/master/app/src/main/java/com/example/mysubscribers/ui)
 * [Coroutines](https://github.com/paulovsborges/RegisterSubscribers/blob/master/app/src/main/java/com/example/mysubscribers/ui/subscriber/SubscriberViewModel.kt)
 * [Room](https://github.com/paulovsborges/RegisterSubscribers/tree/master/app/src/main/java/com/example/mysubscribers/data/db)
+* [Koin](https://github.com/paulovsborges/RegisterSubscribers/tree/master/app/src/main/java/com/example/mysubscribers/di)
 
 
 
@@ -50,6 +51,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 
 
 - [Coroutines](https://developer.android.com/kotlin/coroutines?hl=pt-br)
+- [Koin](https://insert-koin.io/)
 - [Room](https://developer.android.com/jetpack/androidx/releases/room?gclid=CjwKCAjww-CGBhALEiwAQzWxOkDJH7ZQnsfTdrQgfBpw32w-y4NdSqcpqpHXf-opGTp4R62uaro19xoCh1cQAvD_BwE&gclsrc=aw.ds)
 - [RecyclerView](https://developer.android.com/guide/topics/ui/layout/recyclerview?gclid=CjwKCAjww-CGBhALEiwAQzWxOoJk2GtlnylzeEjfIZLJfTjF7XA1Y2UjOGKLjPq_xUxmdcDEkI1zIxoCFzkQAvD_BwE&gclsrc=aw.ds)
 
