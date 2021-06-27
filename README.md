@@ -1,5 +1,5 @@
 
-# Registrar subscribers 
+# Register subscribers 
 #### Room |Koin| Coroutines | Kotlin | MVVM | RecyclerView |
 
 **Tecnologias aplicadas**
