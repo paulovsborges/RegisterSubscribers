@@ -1,6 +1,8 @@
 package com.example.mysubscribers.data.db
 
+import android.app.Application
 import android.content.Context
+import androidx.room.Dao
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
@@ -12,24 +14,12 @@ import com.example.mysubscribers.data.db.entity.SubscriberEntity
 abstract class AppDataBase: RoomDatabase() {
 
     abstract val subscriberDAO : SubscriberDAO
+}
 
-    //implementação de um singleton
-    companion object{
-        @Volatile
-        private var INSTANCE: AppDataBase? = null
+internal fun provideDataBase(application: Application): AppDataBase{
+    return Room.databaseBuilder(application, AppDataBase::class.java, "app_database").build()
+}
 
-        fun getInstance(context: Context): AppDataBase {
-            synchronized(this){
-                var instance: AppDataBase? = INSTANCE
-                if(instance == null){
-                    instance = Room.databaseBuilder(
-                        context,
-                        AppDataBase::class.java,
-                        "app_database"
-                    ).build()
-                }
-                return instance
-            }
-        }
-    }
+internal fun provideDao(appDB: AppDataBase): SubscriberDAO{
+    return appDB.subscriberDAO
 }
