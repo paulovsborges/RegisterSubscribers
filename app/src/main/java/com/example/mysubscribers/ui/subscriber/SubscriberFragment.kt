@@ -4,34 +4,18 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.mysubscribers.R
-import com.example.mysubscribers.data.db.AppDataBase
-import com.example.mysubscribers.data.db.dao.SubscriberDAO
 import com.example.mysubscribers.extensions.hideKeyboard
-import com.example.mysubscribers.repository.DataBaseDataSource
-import com.example.mysubscribers.repository.SubscriberRepository
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.subscriber_fragment.*
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class SubscriberFragment : Fragment(R.layout.subscriber_fragment) {
 
-    private val viewModel: SubscriberViewModel by viewModels {
-        //dependencias do viewModel
-        object : ViewModelProvider.Factory {
-            override fun <T : ViewModel?> create(modelClass: Class<T>): T {
-                val subscriberDAO: SubscriberDAO =
-                    AppDataBase.getInstance(requireContext()).subscriberDAO
 
-                val repository: SubscriberRepository = DataBaseDataSource(subscriberDAO)
-                return SubscriberViewModel(repository) as T
-            }
-        }
-    }
+    private val viewModel: SubscriberViewModel by viewModel()
 
     private val args: SubscriberFragmentArgs by navArgs()
 
